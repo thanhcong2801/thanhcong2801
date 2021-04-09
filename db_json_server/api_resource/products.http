@@ -1,0 +1,56 @@
+@baseUrl = http://localhost:3000/api
+@resource = products
+###
+# @name getAll
+GET {{baseUrl}}/{{resource}}
+
+###
+# @name getId
+GET {{baseUrl}}/{{resource}}/BXSLnRg
+
+###
+# @name filterProduct_Operation
+GET {{baseUrl}}/{{resource}}?cost_gte=500
+
+###
+# @name filterProduct_Operation
+GET {{baseUrl}}/{{resource}}?name_like=BXSLnRg
+
+###
+# @name filterProduct_Paginate
+GET {{baseUrl}}/{{resource}}?_page=1&_limit=2
+
+###
+# @name filterProduct_Sort
+GET {{baseUrl}}/{{resource}}?_sort=cost&_order=asc
+
+###
+# @name addNew
+POST {{baseUrl}}/{{resource}}
+Content-Type: application/json
+
+{
+  "cateroryId": "0b5c2491-aa4e-4920-a4ea-af053b1d56ba",
+  "name": "Minh Thu",
+  "description": "Wooden",
+  "cost": 223,
+  "image": "http://placeimg.com/300/500",
+  "color": "yellow"
+}
+
+###
+# @name update
+PATCH {{baseUrl}}/{{resource}}/kSAX9lL
+Content-Type: application/json
+
+{
+  "name": "Nguyen Thi Minh Thu",
+  "description": "Nam Dinh",
+  "cost": 222,
+  "image": "http://placeimg.com/300/500",
+  "color": "white"
+}
+
+###
+# @name remove
+DELETE {{baseUrl}}/{{resource}}/3
